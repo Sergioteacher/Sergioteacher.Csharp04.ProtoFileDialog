@@ -1,0 +1,35 @@
+﻿<Window x:Class="Sergioteacher.Csharp04.ProtoFileDialog.WindowFileDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sergioteacher.Csharp04.ProtoFileDialog"
+        mc:Ignorable="d"
+        Title="Mi casi FileDialog" Closing="Window_Closing" Activated="Window_Activated" Height="450" Width="800" Background="Chocolate" FontSize="22"  >
+    <Grid Margin="0,3,0,-3">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Content="Introduciendo datos ..." Grid.Row="0"  HorizontalAlignment="Left"  VerticalAlignment="Center"  FontWeight="Bold"/>
+        <!--
+        *** se comenta como cualquier fichero XML  ***
+        <TextBox x:Name="Salida" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="28" TextWrapping="Wrap"  Text="" Width="400"/>
+        -->
+        <TextBox x:Name="MiTexto" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="28" Margin="10,0,0,0" TextWrapping="NoWrap" Text="@@@" />
+        <Button x:Name="BRefres" Click="BRefres_Click"  Content="Refrescar"  Grid.Row="2" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Bottom"  />
+        <Button x:Name="BIntro" Click="BIntro_Click" Content="Ok"  Grid.Row="3" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100" />
+        <Button x:Name="BCancel" Click="BCancel_Click" Content="Cancel" Grid.Row="3" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="5,0,0,0" Width="100" />
+        <ItemsControl x:Name="UnaRistra" Visibility="Hidden" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Right" HorizontalContentAlignment="Center" >
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding Titulo}" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</Window>
